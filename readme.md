@@ -9,7 +9,7 @@
     - flex-direction
 
 ## Time taken to complete this project
-    - 7 hours
+    - 7 hours + 3 hours
 
 ## Screenshot
 ![image](project12.png)

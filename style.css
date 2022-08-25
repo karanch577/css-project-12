@@ -32,6 +32,7 @@ nav .btn{
     background-color: rgb(165,199,183);
     padding: 1em 3em;
     border: 1px solid rgb(255, 255, 255,0.5);
+    width: 150px;
     color: #fff;
 }
 
@@ -39,38 +40,69 @@ nav{
     background-color: #636C79;
     display: flex;
     justify-content: space-between;
-    padding: .5em 3em;
+    padding: .5em 4%;
     color: #fff;
+}
+
+nav .btn{
+    margin-left: 1em;
+
 }
 
 .list{
     display: flex;
     align-items: center;
     list-style-type: none;
+    justify-content: space-between;
+    width: 80%;
 }
 
 .nav-right{
     display: flex;
+    width: 70%;
+    justify-content: space-between;
 }
 
+
 .list-items{
-    padding: 1em 2em;
+    padding: 1em 0;
 }
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
 
 /* hero */
 
 .hero{
     display: flex;
     gap: 3em;
-    padding: 4em;
+    padding: 4em 5%;
     color: #fff;
     background-color: #636C79;
+}
+
+
+.hero-right{
+    width: 50%;
+}
+.hero-left img{
+    width: 100%;
 }
 
 .input-div{
     background-color: #fff;
     height: 3em;
     width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+.input-div .btn{
+    width: 170px;
+    height: 47px;
 }
 
 .hero .description{
@@ -81,8 +113,23 @@ nav{
     height: 3em;
     margin-top: .3em;
     margin-left: .2em;
+    width: 100%;
 }
 
+
+@media  (max-width:1152px) {
+    .hero{
+        flex-direction: column;
+        
+    }
+
+    .hero-left{
+        margin: 0 auto;
+    }
+    .hero-right{
+        width: 100%;
+    }
+}
 
 /* images */
 
@@ -112,7 +159,11 @@ nav{
 
 /* Stat Section */
 .stat{
-    margin: 5em;
+    margin: 5em 5%;
+}
+
+.stat-image{
+    width: 100%;
 }
 
 .stat .heading{
@@ -130,7 +181,7 @@ nav{
 }
 
 
-/* manin section */
+/* main section */
 .main-heading{
     text-align: center;
     font-size: 2.5rem;
@@ -146,6 +197,13 @@ nav{
     justify-content: space-around;
 }
 
+.main-container1,
+.main-container2,
+.main-container3{
+    display: flex;
+    justify-content: space-between;
+}
+
 .main-left{
     width: 48%;
     flex-basis: 1;
@@ -156,21 +214,29 @@ nav{
 }
 
 .main-img1{
-    background: url(images/3.jpg) -160px 0;
-    width: 450px;
+    background: url(images/3.jpg) -20vw 0;
+    width: 45%;
+    /* max-width: 700px; */
     background-size: cover;
     background-repeat: no-repeat;
-    height: 400px;
-    
+    height: 40vw;
 }
 
 .main-img2{
-    background: url(images/4.jpg) 180px 20px;
-    width: 450px;
-    background-size: contain;
+    background: url(images/4.jpg) 1vw 0;
+    width: 40%;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 400px;
+    height: 40vw;
     
+}
+
+.main-img3{
+    background: url(images/5.jpg) 30% 0;
+    width: 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 38vw;
 }
 
 .main-text{
@@ -216,11 +282,10 @@ nav{
     margin-top: 3em;
 }
 .card img{
-    height: 450px;
+    width: 100%;
 }
 
 .testimonial .btn{
-    border: 1px solid green;
     margin: 3em auto;
 }
 
@@ -233,11 +298,6 @@ footer{
 .footer-top{
     display: flex;
     justify-content: space-between;
-}
-
-
-
-.footer-top{
     padding: 2em 0;
     width: 84%;
     margin: 0 auto;
@@ -253,10 +313,102 @@ footer{
 
 }
 
+footer a{
+    color: antiquewhite;
+}
+
+.footer-heading{
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
 ul{
     list-style: none;
 }
 
 .footer-list-items{
     margin: 1em 0;
+}
+
+
+
+@media (max-width:750px) {
+    .list{
+        display: none;
+    }
+
+    .nav-right .btn{
+        position: absolute;
+        right: 9%;
+    }
+    nav::after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        display: block;
+        content: "\f0c9";
+        position: absolute;
+        right: 4%;
+        top: 1em;
+      }
+
+      /* main-section */
+      .main-container1,
+      .main-container2,
+      .main-container3{
+        flex-direction: column;
+        
+    }
+
+    .main-left,
+    .main-right{
+        width: 100%;
+    }
+
+    .main-container1 .main-img1,
+    .main-container3 .main-img3{
+        order: -20;
+    }
+}
+
+/* Testimonial and footer */
+
+@media (max-width:620px) {
+    .footer-bottom{
+        display: none;
+    }
+
+    .testimonial-top{
+        flex-direction: column;
+    }
+
+    .testimonial-top .heading{
+        width: 100%;
+    }
+    
+    .testimonial-top .description{
+        width: 100%;
+    }
+
+    .testimonial-bottom{
+        flex-direction: column;
+
+    }
+
+    .testimonial-bottom .card img{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .testimonial-bottom .card{
+        width: 100%;
+    }
+
+    .footer-top{
+        display: block;
+    }
+
+    .icons{
+        margin-top: 1em;
+    }
 }
