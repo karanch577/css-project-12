@@ -411,4 +411,9 @@ ul{
     .icons{
         margin-top: 1em;
     }
+
+    .hero-heading{
+        font-size: 2rem;
+    }
+
 }
